@@ -61,7 +61,7 @@ File.open('pokemon_status.txt','w', :encoding => "utf-8") do |poke|
     end
     path = '//tbody' + "/tr[#{i}]"
     status = load_data(doc,path)
-    if status[1].length != 5  || lastPokemon == status[1] then
+    if status[1].length != 5 || lastPokemon == status[1] || status[1] == "メガプテラ" then
         next
     end
     lastPokemon = status[1]
@@ -95,6 +95,6 @@ File.open('pokemon_status.txt','w', :encoding => "utf-8") do |poke|
     printText += ', sp: ' + status[7]
     printText += ', total: ' + status[8]
     printText += ' },'
-    poke.puts(printText)#読み込んだデータをcsvファイルに保存
+    poke.puts(printText) #読み込んだデータをtextファイルに保存
   end
 end

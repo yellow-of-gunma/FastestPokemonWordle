@@ -76,7 +76,6 @@
 	{ id: "138", name: "オムナイト", range: 0, hp: 35, at: 40, bl: 100, co: 90, de: 55, sp: 35, total: 355 },
 	{ id: "139", name: "オムスター", range: 0, hp: 70, at: 60, bl: 125, co: 115, de: 70, sp: 55, total: 495 },
 	{ id: "141", name: "カブトプス", range: 0, hp: 60, at: 115, bl: 105, co: 65, de: 70, sp: 80, total: 495 },
-	{ id: "142", name: "メガプテラ", range: 0, hp: 80, at: 135, bl: 85, co: 70, de: 95, sp: 150, total: 615 },
 	{ id: "144", name: "フリーザー", range: 0, hp: 90, at: 85, bl: 100, co: 95, de: 125, sp: 85, total: 580 },
 	{ id: "146", name: "ファイヤー", range: 0, hp: 90, at: 100, bl: 90, co: 125, de: 85, sp: 90, total: 580 },
 	{ id: "147", name: "ミニリュウ", range: 0, hp: 41, at: 64, bl: 45, co: 50, de: 50, sp: 50, total: 300 },
