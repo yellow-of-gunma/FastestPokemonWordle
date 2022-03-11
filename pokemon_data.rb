@@ -43,14 +43,15 @@ def load_data(d,path)
 end
 
 # スクレイピング先のURL
-#url = 'http://blog.game-de.com/pm-sm/sm-allstats/'
 url = 'https://yakkun.com/swsh/stats_list.htm?mode=all'
 #html = open(url, "r:binary").read
 html = OpenURI.open_uri(url).read
 doc = Nokogiri::HTML(html.toutf8, nil, 'utf-8')
 # タイトルを表示
 p doc.title
-File.open('pokemon_status.txt','w', :encoding => "utf-8") do |poke|
+File.open('js/pokemon_data.js','w', :encoding => "utf-8") do |poke|
+  poke.puts("function getPokemonList(){")
+  poke.puts("\treturn [")
   #ポケモンをステータスを1匹ずつ取得
   size = 1039
   #size=100
@@ -83,7 +84,7 @@ File.open('pokemon_status.txt','w', :encoding => "utf-8") do |poke|
     elsif status[0].to_i < 898 then
         range = 7
     end
-    printText = "\t"
+    printText = "\t\t"
     printText += '{ id: "' + status[0]
     printText += '", name: "' + status[1]
     printText += '", range: ' + range.to_s
@@ -97,4 +98,6 @@ File.open('pokemon_status.txt','w', :encoding => "utf-8") do |poke|
     printText += ' },'
     poke.puts(printText) #読み込んだデータをtextファイルに保存
   end
+  poke.puts("\t]")
+  poke.puts("}")
 end
